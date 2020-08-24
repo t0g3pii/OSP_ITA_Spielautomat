@@ -1,5 +1,4 @@
 # OSP_ITA_Spielautomat
-## Beispiel Readme.md ab hier. Muss Eingerichtet werden.
 
 Dieses Projekt ist die Code-Verwaltung für den Spielautomaten aus dem Georg-Simon-Ohm Berufskolleg. 
 [Link](https://t0g3pii.de/OSP_ITA_Spielautomat) aktuell ohne Funktion.
