@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Automatic Merge
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ debug ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge to master branch
+        uses: devmasx/merge-branch@v1.1.0
+        with:
+          type: now
+          target_branch: 'master'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
