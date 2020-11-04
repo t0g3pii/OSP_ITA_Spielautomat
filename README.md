@@ -3,6 +3,8 @@
 Dieses Projekt ist die Code-Verwaltung für den Spielautomaten aus dem Georg-Simon-Ohm Berufskolleg. 
 [Link](https://t0g3pii.de/OSP_ITA_Spielautomat) aktuell ohne Funktion.
 
+![alt text](https://github.com/t0g3pii/OSP_ITA_Spielautomat/blob/master/erste_planung.png?raw=true)
+
 ## Getting Started
 
 Eine längere Beschreibung für die Repo hier her
