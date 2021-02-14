@@ -100,7 +100,7 @@ $data = $st->fetch();
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="assets/img/slotlogin.png" style="width: 50px">
-                    <img id="role1" style="height: 50px" src="/assets/img/1.jpg">
+                    <img id="role1" class="animated_div" style="height: 50px" src="/assets/img/1.jpg">
                     <img id="role2" style="height: 50px" src="/assets/img/1.jpg">
                     <img id="role3" style="height: 50px" src="/assets/img/1.jpg">
                     <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">OSP_Spielautomat</h5>
