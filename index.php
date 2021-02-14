@@ -1,5 +1,13 @@
 <html>
-
+<?php
+    session_start();
+    if (isset($_SESSION["UUID"])) {
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'game.php';
+        header("Location: http://$host$uri/$extra");
+    }
+?>
 <head>
     <title>Game Testing Website</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
