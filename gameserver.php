@@ -29,6 +29,6 @@
             print_r( $data );
             $win = 0;
         // }
-        exit(json_encode(array($roleone,$roletwo,$rolethree,$win)));
+        exit(json_encode(array($roleone,$roletwo,$rolethree,$win,$count)));
     }
 ?>
