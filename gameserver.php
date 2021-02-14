@@ -18,17 +18,19 @@
         session_destroy();
         exit("success");
     } elseif ($_POST["action"]=="play") {
+        $pdo->query("UPDATE `user` SET `credits`=`credits` - ".$_POST["stake"]." WHERE `UUID`=".$_SESSION["UUID"]);
         $st = $pdo->prepare( "SELECT * FROM `slots`" );
         $st->execute();
-        $count = ($st->rowCount()) - 1;
+        // $count = ($st->rowCount()) - 1;
+        $count=1;
         $roleone = rand(0, $count);
         $roletwo = rand(0, $count);
         $rolethree = rand(0, $count);
-        // if($roleone==$roletwo && $roleone==$rolethree) {
+        if($roleone==$roletwo && $roleone==$rolethree) {
             $data = $st->fetchAll();
-            print_r( $data );
-            $win = 0;
-        // }
-        exit(json_encode(array($roleone,$roletwo,$rolethree,$win,$count)));
+            $win = $_POST["stake"] * $data[$roleone]["win"];
+            $pdo->query("UPDATE `user` SET `credits`=`credits` + ".$win." WHERE `UUID`=".$_SESSION["UUID"]);
+        }
+        exit(json_encode(array($roleone,$roletwo,$rolethree,$win)));
     }
 ?>
