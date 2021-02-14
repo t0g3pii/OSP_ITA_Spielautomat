@@ -7,7 +7,7 @@ try {
 $dbh = new PDO("mysql:host=$hostname;dbname=$db", $username, $password);
 $sql = "SELECT lastFree FROM ni128208_2sql8";
 $time = $dbh->query($sql);
-foreach ($time as $row) {
+while ($row = $time->fetch()) {
     $date = new DateTime($row['lastFree']);
     $dateN = new DateTime();
 
