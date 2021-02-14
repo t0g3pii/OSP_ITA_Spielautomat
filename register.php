@@ -1,7 +1,7 @@
 <?php
     require("inc/db.inc.php");
     $st = $pdo->prepare( "INSERT INTO `user` (`username`, `pin`) VALUES (?, ?);" );
-    $st->execute(array($_GET["username"], $_GET["pin"]))
+    $st->execute(array($_GET["username"], $_GET["pin"]));
     if (!$st->execute()) {
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
