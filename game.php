@@ -95,34 +95,36 @@ $data = $st->fetch();
 </head>
 
 <body style="width: 80%">
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@ & Credits</span>
-        <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
-        <input class="form-control" id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
+    <div class="center">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@ & Credits</span>
+            <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
+            <input class="form-control" id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Einsatz</span>
+            <input class="form-control" id="game_stake" value="5" type="number" disabled>
+        </div>
+        <div class="input-group mb-3">
+            <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
+            <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
+            <input class="form-control" id="game_slot1" value=0 disabled>
+            <input class="form-control" id="game_slot2" value=0 disabled>
+            <input class="form-control" id="game_slot3" value=0 disabled>
+            <input class="form-control" id="game_win" value=0 disabled>
+        </div>
+        <div id="buttons">
+            <button class="btn btn-primary" onclick="play();">Spielen</button>
+            <button class="btn btn-success btn-sm" onclick="stakeAdd(1);">Einsatz +</button>
+            <button class="btn btn-warning btn-sm" onclick="stakeRem(1);">Einsatz -</button>
+            <button class="btn btn-secondary" onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
+            <button class="btn btn-danger" onclick="logout();">Ausloggen</button>
+        </div>
+        </br></br></br>
+        <img id="role1" style="height: 250px" src="/assets/img/1.jpg">
+        <img id="role2" style="height: 250px" src="/assets/img/1.jpg">
+        <img id="role3" style="height: 250px" src="/assets/img/1.jpg">
     </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Einsatz</span>
-        <input class="form-control" id="game_stake" value="5" type="number" disabled>;
-    </div>
-    <div class="input-group mb-3">
-        <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
-        <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
-        <input class="form-control" id="game_slot1" value=0 disabled>
-        <input class="form-control" id="game_slot2" value=0 disabled>
-        <input class="form-control" id="game_slot3" value=0 disabled>
-        <input class="form-control" id="game_win" value=0 disabled>
-    </div>
-    <div id="buttons">
-        <button class="btn btn-primary" onclick="play();">Spielen</button>
-        <button class="btn btn-success btn-sm" onclick="stakeAdd(1);">Einsatz +</button>
-        <button class="btn btn-warning btn-sm" onclick="stakeRem(1);">Einsatz -</button>
-        <button class="btn btn-secondary" onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
-        <button class="btn btn-danger" onclick="logout();">Ausloggen</button>
-    </div>
-    </br></br></br>
-    <img id="role1" style="height: 250px" src="/assets/img/1.jpg">
-    <img id="role2" style="height: 250px" src="/assets/img/1.jpg">
-    <img id="role3" style="height: 250px" src="/assets/img/1.jpg">
 </body>
 
 </html>
