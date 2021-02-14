@@ -75,13 +75,13 @@ $data = $st->fetch();
         </script>
     </head>
     <body>
-        <input id="game_username" value="<?php echo $data["username"]; ?>">
-        <input id="game_value" value="<?php echo $data["credits"]; ?>">
-        <input id="game_stake" value="5" type="number">;
-        <input id="game_slot1">
-        <input id="game_slot2">
-        <input id="game_slot3">
-        <input id="game_win">
+        <input id="game_username" value="<?php echo $data["username"]; ?>" disabled>
+        <input id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
+        <input id="game_stake" value="5" type="number" disabled>;
+        <input id="game_slot1" disabled>
+        <input id="game_slot2" disabled>
+        <input id="game_slot3" disabled>
+        <input id="game_win" disabled>
         <button onclick="stakeAdd(1);">Einsatz +</button>
         <button onclick="stakeRem(1);">Einsatz -</button>
         <button onclick="play();">Spielen</button>
