@@ -9,7 +9,7 @@ $data = $st->fetch();
 $date = new DateTime($data['lastFree']);
 $dateN = new DateTime();
 
-echo $date ."</br>";
-echo $dateN ."</br>";
+echo $date->format('Y-m-d H:i:s') ."</br>";
+echo $dateN->format('Y-m-d H:i:s') ."</br>";
 
 ?>
