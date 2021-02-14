@@ -129,8 +129,8 @@ $data = $st->fetch();
                         </div>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" width="33%" float="left">
+                    <div class="container">
+                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" style="float: left; width: 34%;">
                                 <img src="assets/img/0.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/1.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/2.jpg" style="display:none; width: 250px;" />
@@ -141,7 +141,7 @@ $data = $st->fetch();
                                 <img src="assets/img/7.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/8.jpg" style="display:none; width: 250px;" />
                             </div>
-                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" width="33%" float="left">
+                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" style="float: left; width: 33%;">
                                 <img src="assets/img/0.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/1.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/2.jpg" style="display:none; width: 250px;" />
@@ -152,7 +152,7 @@ $data = $st->fetch();
                                 <img src="assets/img/7.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/8.jpg" style="display:none; width: 250px;" />
                             </div>
-                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" width="33%" float="left">
+                            <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-timeout="5" data-cycle-speed="100" style="float: left; width: 33%;">
                                 <img src="assets/img/0.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/1.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/2.jpg" style="display:none; width: 250px;" />
