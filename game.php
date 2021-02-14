@@ -94,10 +94,6 @@ $data = $st->fetch();
     </script>
 </head>
 
-<body style="width: 80%">
-
-</body>
-
 <body oncontextmenu="return false">
     <div class="modal show" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
         <div class="modal-dialog modal-xl">
@@ -120,10 +116,13 @@ $data = $st->fetch();
                             </div>
                             <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
+                                <span class="input-group-text" id="basic-addon1">Rolle 1,2 & 3</span>
                                 <input class="form-control" id="game_slot1" value=0 disabled>
                                 <input class="form-control" id="game_slot2" value=0 disabled>
                                 <input class="form-control" id="game_slot3" value=0 disabled>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Gewinn</span>
                                 <input class="form-control" id="game_win" value=0 disabled>
                             </div>
                             <div id="buttons">
@@ -136,9 +135,9 @@ $data = $st->fetch();
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <img id="role1" style="height: 250px" src="/assets/img/1.jpg">
-                        <img id="role2" style="height: 250px" src="/assets/img/1.jpg">
-                        <img id="role3" style="height: 250px" src="/assets/img/1.jpg">
+                        <img id="role1" style="height: 200px" src="/assets/img/1.jpg">
+                        <img id="role2" style="height: 200px" src="/assets/img/1.jpg">
+                        <img id="role3" style="height: 200px" src="/assets/img/1.jpg">
                     </div>
                 </form>
             </div>
