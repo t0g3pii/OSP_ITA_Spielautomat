@@ -101,8 +101,8 @@ $data = $st->fetch();
                 <div class="modal-header">
                     <img src="assets/img/slotlogin.png" style="width: 50px">
                     <img id="role1" style="height: 50px" src="/assets/img/1.jpg">
-                        <img id="role2" style="height: 50px" src="/assets/img/1.jpg">
-                        <img id="role3" style="height: 50px" src="/assets/img/1.jpg">
+                    <img id="role2" style="height: 50px" src="/assets/img/1.jpg">
+                    <img id="role3" style="height: 50px" src="/assets/img/1.jpg">
                     <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">OSP_Spielautomat</h5>
                 </div>
                 <form>
@@ -130,16 +130,19 @@ $data = $st->fetch();
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-primary" onclick="play();">Spielen</button>
-                                <button type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
-                                <button type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Second group">
-                                <button type="button" class="btn btn-secondary btn-lg" onclick="getFree();">Free Credits</button>
-                                <button type="button" class="btn btn-danger btn-lg" onclick="logout();">Abmelden</button>
-                            </div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary">Left</button>
+                            <button type="button" class="btn btn-secondary">Middle</button>
+                            <button type="button" class="btn btn-secondary">Right</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-primary" onclick="play();">Spielen</button>
+                            <button type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
+                            <button type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Second group">
+                            <button type="button" class="btn btn-secondary btn-lg" onclick="getFree();">Free Credits</button>
+                            <button type="button" class="btn btn-danger btn-lg" onclick="logout();">Abmelden</button>
                         </div>
                     </div>
                 </form>
