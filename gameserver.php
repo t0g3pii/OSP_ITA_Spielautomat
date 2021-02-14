@@ -20,10 +20,10 @@
     } elseif ($_POST["action"]=="play") {
         $st = $pdo->prepare( "SELECT * FROM `slots`" );
         $st->execute();
-        $count = $st->rowCount();
-        $roleone = rand(1,$count);
-        $roletwo = rand(1,$count);
-        $rolethree = rand(1,$count);
+        $count = ($st->rowCount()) - 1;
+        $roleone = rand(0, $count);
+        $roletwo = rand(0, $count);
+        $rolethree = rand(0, $count);
         // if($roleone==$roletwo && $roleone==$rolethree) {
             $data = $st->fetchAll();
             print_r( $data );
