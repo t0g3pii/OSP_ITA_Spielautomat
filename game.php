@@ -53,9 +53,9 @@ $data = $st->fetch();
             }
 
             function play() {
-                let stake = $("#game_stake").val();
+                let stake = Number($("#game_stake").val());
                 $.post("gameserver.php",{"action":"play", "stake": stake} ,(data)=>{
-                    
+                    console.log(data);
                 });
             }
         </script>
