@@ -13,7 +13,7 @@ require("inc/db.inc.php");
 $st = $pdo->prepare( "SELECT username, credits, lastFree FROM `user` WHERE `UUID` = ?" );
 $st->execute(array($_SESSION["UUID"]));
 $data = $st->fetch();
-echo json_encode($data);
+// echo json_encode($data);
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +34,10 @@ echo json_encode($data);
                     update();
                 });
             }
+
+            $(()=>{
+                update();
+            })
         </script>
     </head>
     <body>
