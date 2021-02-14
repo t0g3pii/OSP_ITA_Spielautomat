@@ -42,7 +42,7 @@ $data = $st->fetch();
 
             function stakeAdd(x) {
                 let oldStake = $("#game_stake").val();
-                let newStake = oldStake + x;
+                let newStake = Number(oldStake) + x;
                 $("#game_stake").val( newStake );
             }
 
