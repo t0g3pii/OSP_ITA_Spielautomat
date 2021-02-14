@@ -12,4 +12,6 @@ $dateN = new DateTime();
 echo $date->format('Y-m-d H:i:s') ."</br>";
 echo $dateN->format('Y-m-d H:i:s') ."</br>";
 
+echo $date->diff($dateN)->m.' minutes<br>';
+
 ?>
