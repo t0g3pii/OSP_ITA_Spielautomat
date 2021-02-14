@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Startseite - Login</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen"/>
+        <script src="assets/js/main.js" async></script>
 	</head>
     <form >
 		<label for="username">Username:</label>
