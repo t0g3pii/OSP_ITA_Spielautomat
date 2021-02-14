@@ -131,13 +131,13 @@ $data = $st->fetch();
                     </div>
                     <div class="modal-footer">
                         <div class="btn-group" role="group" aria-label="First group">
-                            <button style="width:auto;" type="button" class="btn btn-primary" onclick="play();">Spielen</button>
-                            <button style="width:auto;" type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
-                            <button style="width:auto;" type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-primary" onclick="play();">Spielen</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
                         </div>
                         <div class="btn-group" role="group" aria-label="Second group">
-                            <button type="button" class="btn btn-secondary" onclick="getFree();">Free Credits</button>
-                            <button type="button" class="btn btn-danger" onclick="logout();">Abmelden</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-secondary" onclick="getFree();">Free Credits</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-danger" onclick="logout();">Abmelden</button>
                         </div>
                     </div>
                 </form>
