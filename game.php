@@ -66,10 +66,10 @@ $data = $st->fetch();
                     console.log(rawData);
                     update();
                     let data = JSON.parse(rawData); // roleOne, roleTwo, roleThree, WinAmount
-                    document.getElementById("game_slot1").value = data.roleOne;
-                    document.getElementById("game_slot2").value = data.roleTwo;
-                    document.getElementById("game_slot3").value = data.roleThree;
-                    document.getElementById("game_win").value = data.WinAmount;
+                    document.getElementById("game_slot1").value = rawData.roleOne;
+                    document.getElementById("game_slot2").value = rawData.roleTwo;
+                    document.getElementById("game_slot3").value = rawData.roleThree;
+                    document.getElementById("game_win").value = rawData.WinAmount;
                 });
             }
         </script>
