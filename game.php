@@ -86,9 +86,9 @@ $data = $st->fetch();
                 document.getElementById("game_slot2").value = data[1];
                 document.getElementById("game_slot3").value = data[2];
                 document.getElementById("game_win").value = data[3];
-                document.getElementById("role1").src = "/assets/img/" + data[1] + ".jpg";
-                document.getElementById("role2").src = "/assets/img/" + data[2] + ".jpg";
-                document.getElementById("role3").src = "/assets/img/" + data[3] + ".jpg";
+                document.getElementById("role1").src = "/assets/img/" + data[0] + ".jpg";
+                document.getElementById("role2").src = "/assets/img/" + data[1] + ".jpg";
+                document.getElementById("role3").src = "/assets/img/" + data[2] + ".jpg";
             });
         }
     </script>
