@@ -95,7 +95,7 @@ $data = $st->fetch();
 </head>
 
 <body style="width: 80%">
-    <div class="center">
+    <div class="container">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">@ & Credits</span>
             <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
@@ -105,8 +105,8 @@ $data = $st->fetch();
             <span class="input-group-text" id="basic-addon1">Einsatz</span>
             <input class="form-control" id="game_stake" value="5" type="number" disabled>
         </div>
+        <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
         <div class="input-group mb-3">
-            <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
             <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
             <input class="form-control" id="game_slot1" value=0 disabled>
             <input class="form-control" id="game_slot2" value=0 disabled>
