@@ -127,25 +127,18 @@ $data = $st->fetch();
                                 <span class="input-group-text" id="basic-addon1">Gewinn</span>
                                 <input class="form-control" id="game_win" value=0 disabled>
                             </div>
-                            <div id="buttons">
-                                <button class="btn btn-primary" onclick="play();">Spielen</button>
-                                <button class="btn btn-success btn-sm" onclick="stakeAdd(1);">Einsatz +</button>
-                                <button class="btn btn-warning btn-sm" onclick="stakeRem(1);">Einsatz -</button>
-                                <button class="btn btn-secondary" onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
-                                <button class="btn btn-danger" onclick="logout();">Ausloggen</button>
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-primary">Spielen</button>
-                                <button type="button" class="btn btn-success">Einsatz +</button>
-                                <button type="button" class="btn btn-warning">Einsatz -</button>
+                                <button type="button" class="btn btn-primary" onclick="play();">Spielen</button>
+                                <button type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
+                                <button type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
                             </div>
                             <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                <button type="button" class="btn btn-secondary">Free Credits</button>
-                                <button type="button" class="btn btn-danger">Abmelden</button>
+                                <button type="button" class="btn btn-secondary" onclick="getFree();">Free Credits</button>
+                                <button type="button" class="btn btn-danger" onclick="logout();">Abmelden</button>
                             </div>
                         </div>
                     </div>
