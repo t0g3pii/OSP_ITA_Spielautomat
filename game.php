@@ -163,7 +163,7 @@ $data = $st->fetch();
                                 <img src="assets/img/7.jpg" style="display:none; width: 250px;" />
                                 <img src="assets/img/8.jpg" style="display:none; width: 250px;" />
                             </div>
-                            <img id="role2" style="height: 250px" src="assets/img/0.jpg">
+                            <img id="role1" style="height: 250px" src="assets/img/0.jpg">
                             <img id="role2" style="height: 250px" src="assets/img/1.jpg">
                             <img id="role3" style="height: 250px" src="assets/img/2.jpg">
                         </div>
