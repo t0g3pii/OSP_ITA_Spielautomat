@@ -7,7 +7,7 @@ body {
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 0 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -17,7 +17,7 @@ input[type=text] {
 button {
   color: white;
   padding: 14px 20px;
-  margin: 0px 15px 8px;
+  margin: 20px 15px 8px;
   border: none;
   cursor: pointer;
   width: 45%;
@@ -29,7 +29,7 @@ button:hover {
 
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 24px 0 0 0;
     position: relative;
   }
   

@@ -3,7 +3,9 @@
 
 <head>
     <title>Startseite - Login</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen" />
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js" async></script>
 </head>
 <div id="login" class="modal">
