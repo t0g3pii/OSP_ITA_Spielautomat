@@ -103,10 +103,10 @@ $data = $st->fetch();
     </div>
     <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
-    <input class="form-control"  id="game_slot1" disabled>
-    <input class="form-control"  id="game_slot2" disabled>
-    <input class="form-control"  id="game_slot3" disabled>
-    <input class="form-control" id="game_win" disabled>
+    <input class="form-control"  id="game_slot1" value=0 disabled>
+    <input class="form-control"  id="game_slot2" value=0 disabled>
+    <input class="form-control"  id="game_slot3" value=0 disabled>
+    <input class="form-control" id="game_win" value=0 disabled>
     </div>
     <button class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
     <button class="btn btn-success" onclick="stakeRem(1);">Einsatz -</button>
