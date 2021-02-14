@@ -47,9 +47,9 @@ $data = $st->fetch();
             }
 
             function stakeRem(x) {
-                let old = $("#game_stake").val();
-                let new = old - x;
-                $("#game_stake").val( new );
+                let oldStake = $("#game_stake").val();
+                let newStake = oldStake - x;
+                $("#game_stake").val( newStake );
             }
         </script>
     </head>
