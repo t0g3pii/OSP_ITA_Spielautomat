@@ -33,9 +33,9 @@ button:hover {
     position: relative;
   }
   
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
+img.avatar {
+    width: 15%;
+    height: 15%;
   }
   
 .container {
