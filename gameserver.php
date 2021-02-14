@@ -14,5 +14,8 @@
         $st = $pdo->prepare( "UPDATE `user` SET `credits`=`credits` + 100, `lastFree`=CURRENT_TIMESTAMP WHERE  `UUID`=?" );
         $st->execute(array($_SESSION["UUID"]));
         exit("success");
+    } elseif ($_POST["action"]=="logout") {
+        session_destroy();
+        exit("success");
     }
 ?>

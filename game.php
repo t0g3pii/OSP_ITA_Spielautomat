@@ -13,7 +13,6 @@ require("inc/db.inc.php");
 $st = $pdo->prepare( "SELECT username, credits, lastFree FROM `user` WHERE `UUID` = ?" );
 $st->execute(array($_SESSION["UUID"]));
 $data = $st->fetch();
-// echo json_encode($data);
 ?>
 
 <!DOCTYPE html>
@@ -35,14 +34,16 @@ $data = $st->fetch();
                 });
             }
 
-            $(()=>{
-                update();
-            })
+            function logout() {
+                $.post("gameserver.php",{"action":"logout"} ,()=>{
+                    window.open("index.php","_self")
+                });
+            }
         </script>
     </head>
     <body>
-        <input id="game_username">
-        <input id="game_value">
+        <input id="game_username" value="<?php echo $data["username"]; ?>">
+        <input id="game_value" value="<?php echo $data["credits"]; ?>">
         <input id="game_slot1">
         <input id="game_slot2">
         <input id="game_slot3">
@@ -50,11 +51,7 @@ $data = $st->fetch();
         <button>Einsatz +</button>
         <button>Einsatz -</button>
         <button>Spielen</button>
-        <button onclick="getFree();">Freebee Kepie</button>
-        <button>Ausloggen</button>
+        <button onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
+        <button onclick="logout();">Ausloggen</button>
     </body>
 </html>
-
-
-<!-- echo $_SESSION["UUID"]; -->
- -->
