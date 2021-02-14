@@ -1,7 +1,7 @@
 <?php
     require("inc/db.inc.php");
     $st = $pdo->prepare( "SELECT * FROM `user` WHERE `username` = ? AND `pin` = ?" );
-    $st->execute(array($_GET["username"], $_GET["pin"]))
+    $st->execute(array($_GET["username"], $_GET["pin"]));
 
     if ($st->rowCount() == 0) {
         $host  = $_SERVER['HTTP_HOST'];
