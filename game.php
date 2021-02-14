@@ -70,10 +70,10 @@ $data = $st->fetch();
                 alert("Gedulde dich du Sackratte!");
                 return
             }
-            wait = true;
-            setTimeout(() => {
-                wait = false;
-            }, 3000);
+            // wait = true;
+            // setTimeout(() => {
+            //    wait = false;
+            //}, 3000);
             let stake = Number($("#game_stake").val());
             $.post("gameserver.php", {
                 "action": "play",
