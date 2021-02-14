@@ -164,6 +164,8 @@ $data = $st->fetch();
                                 <img src="assets/img/8.jpg" style="display:none; width: 250px;" />
                             </div>
                         </div>
+                        <br><br><br><br><br>
+                        <br><br><br><br><br>
                     </div>
                     <div class="modal-footer">
                         <div class="btn-group" role="group" aria-label="First group">
