@@ -11,7 +11,7 @@
         $_SESSION["UUID"] = $st->lastInsertId;
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        $extra = 'index.php?id=';
+        $extra = 'game.php';
         header("Location: http://$host$uri/$extra");
     }
 ?>
