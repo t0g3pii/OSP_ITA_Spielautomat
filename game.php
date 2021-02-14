@@ -20,6 +20,7 @@ $data = $st->fetch();
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script>
+            var wait = false;
             function update() {
                 $.post("gameserver.php",{"action":"getData"} ,(rawdata)=>{
                     let data = JSON.parse(rawdata);
@@ -52,6 +53,14 @@ $data = $st->fetch();
             }
 
             function play() {
+                if (wait) {
+                    alert("Gedulde dich du Sackratte!");
+                    return
+                }
+                wait = true;
+                setTimeout(() => {
+                    wait = false;
+                }, 3000);
                 let stake = Number($("#game_stake").val());
                 $.post("gameserver.php",{"action":"play", "stake": stake} ,(rawData)=>{
                     console.log(rawData);
