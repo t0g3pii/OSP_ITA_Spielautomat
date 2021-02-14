@@ -21,8 +21,8 @@
         $pdo->query("UPDATE `user` SET `credits`=`credits` - ".$_POST["stake"]." WHERE `UUID`=".$_SESSION["UUID"]);
         $st = $pdo->prepare( "SELECT * FROM `slots`" );
         $st->execute();
-        // $count = ($st->rowCount()) - 1;
-        $count=1;
+        $count = ($st->rowCount()) - 1;
+        $win = 0;
         $roleone = rand(0, $count);
         $roletwo = rand(0, $count);
         $rolethree = rand(0, $count);

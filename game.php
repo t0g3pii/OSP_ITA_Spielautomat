@@ -23,7 +23,6 @@ $data = $st->fetch();
             function update() {
                 $.post("gameserver.php",{"action":"getData"} ,(rawdata)=>{
                     let data = JSON.parse(rawdata);
-                    $("#game_username").val(data["username"]);
                     $("#game_value").val(data["credits"]);
                 });
             }
@@ -54,8 +53,10 @@ $data = $st->fetch();
 
             function play() {
                 let stake = Number($("#game_stake").val());
-                $.post("gameserver.php",{"action":"play", "stake": stake} ,(data)=>{
-                    console.log(data);
+                $.post("gameserver.php",{"action":"play", "stake": stake} ,(rawData)=>{
+                    // console.log(rawData);
+                    update();
+                    let data = JSON.parse(rawData); // roleOne, roleTwo, roleThree, WinAmount
                 });
             }
         </script>
