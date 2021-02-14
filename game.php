@@ -86,6 +86,9 @@ $data = $st->fetch();
                 document.getElementById("game_slot2").value = data[1];
                 document.getElementById("game_slot3").value = data[2];
                 document.getElementById("game_win").value = data[3];
+                document.getElementById("role1").src = "/assets/img/" + data[1] + ".jpg";
+                document.getElementById("role2").src = "/assets/img/" + data[2] + ".jpg";
+                document.getElementById("role3").src = "/assets/img/" + data[3] + ".jpg";
             });
         }
     </script>
@@ -102,6 +105,7 @@ $data = $st->fetch();
     <input class="form-control"  id="game_stake" value="5" type="number" disabled>;
     </div>
     <div class="input-group mb-3">
+        <p>Wird noch entfernt, und durch Icons ersetzt</p>
     <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
     <input class="form-control"  id="game_slot1" value=0 disabled>
     <input class="form-control"  id="game_slot2" value=0 disabled>
@@ -113,6 +117,10 @@ $data = $st->fetch();
     <button class="btn btn-success" onclick="play();">Spielen</button>
     <button class="btn btn-success" onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
     <button class="btn btn-success" onclick="logout();">Ausloggen</button>
+    </br></br></br>
+    <img id="role1" style="height: 250px" src="/assets/img/1.jpg">
+    <img id="role2" style="height: 250px" src="/assets/img/1.jpg">
+    <img id="role3" style="height: 250px" src="/assets/img/1.jpg">
 </body>
 
 </html>
