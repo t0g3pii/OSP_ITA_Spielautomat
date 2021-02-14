@@ -7,20 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js" async></script>
-    <script type="text/javascript">
-
-        function showChar(e){
-          alert(
-            "Key KeyDown: " + String.fromCharCode(e.charCode) + "\n"
-            + "charCode: " + e.charCode + "\n"
-            + "ALT key KeyDown: " + e.altKey + "\n"
-          );
-        }
-        
-        </script>
 </head>
 
-<body oncontextmenu="return false" onkeydown="showChar(event);">
+<body oncontextmenu="return false">
     <div class="modal show" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
         <div class="modal-dialog modal-xl">
