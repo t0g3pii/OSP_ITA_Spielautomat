@@ -1,23 +1,10 @@
-<?php
-$hostname="vweb18.nitrado.net";
-$username="ni128208_2sql8";
-$password="Passwort";
-$db = "ni128208_2sql8";
-try {
-$dbh = new PDO("mysql:host=$hostname;dbname=$db", $username, $password);
-$sql = "SELECT lastFree FROM ni128208_2sql8";
-$time = $dbh->query($sql);
-while ($row = $time->fetch()) {
-    $date = new DateTime($row['lastFree']);
-    $dateN = new DateTime();
 
-    if ($date > $dateN) {
-        echo $date . " größer als " . $dateN;
-    } else {
-        echo $date . " kleiner als " . $dateN;
-    }
-}
-} catch (PDOException $e) {
-    echo $e;
-}
+<?php
+require("inc/db.inc.php");
+
+$st = $pdo->prepare( "SELECT username, credits, lastFree FROM `user` WHERE `UUID` = ?" );
+$st->execute(array(103));
+$data = $st->fetch();
+
+print_r($data['lastFree']);
 ?>
