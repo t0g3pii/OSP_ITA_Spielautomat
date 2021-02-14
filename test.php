@@ -10,7 +10,7 @@ $date = new DateTime($data['lastFree']);
 $dateN = new DateTime();
 
 echo $date->format('Y-m-d H:i:s') ."</br>";
-echo $dateN->format('Y-m-d H:i:s') ."</br>";
+echo $dateN->format('Y-m-d H:i:s') ."</br></br>";
 
 $since_start = $dateN->diff($date);
 echo $since_start->days.' days total<br>';
