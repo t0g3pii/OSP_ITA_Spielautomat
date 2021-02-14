@@ -9,7 +9,7 @@
         exit();
     }
 ?>
-<head>
+<body oncontextmenu="return false">
     <title>Game Testing Website</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
