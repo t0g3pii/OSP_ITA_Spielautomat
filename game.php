@@ -100,6 +100,9 @@ $data = $st->fetch();
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="assets/img/slotlogin.png" style="width: 50px">
+                    <img id="role1" style="height: 50px" src="/assets/img/1.jpg">
+                        <img id="role2" style="height: 50px" src="/assets/img/1.jpg">
+                        <img id="role3" style="height: 50px" src="/assets/img/1.jpg">
                     <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">OSP_Spielautomat</h5>
                 </div>
                 <form>
@@ -114,7 +117,6 @@ $data = $st->fetch();
                                 <span class="input-group-text" id="basic-addon1">Einsatz</span>
                                 <input class="form-control" id="game_stake" value="5" type="number" disabled>
                             </div>
-                            <p>Wird noch entfernt, und durch Icons ersetzt</p></br>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Rolle 1,2 & 3</span>
                                 <input class="form-control" id="game_slot1" value=0 disabled>
@@ -135,9 +137,17 @@ $data = $st->fetch();
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <img id="role1" style="height: 200px" src="/assets/img/1.jpg">
-                        <img id="role2" style="height: 200px" src="/assets/img/1.jpg">
-                        <img id="role3" style="height: 200px" src="/assets/img/1.jpg">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-primary">Spielen</button>
+                                <button type="button" class="btn btn-success">Einsatz +</button>
+                                <button type="button" class="btn btn-warning">Einsatz -</button>
+                            </div>
+                            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                <button type="button" class="btn btn-secondary">Free Credits</button>
+                                <button type="button" class="btn btn-danger">Abmelden</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
