@@ -4,15 +4,6 @@ body {
     color: white;
 }
 
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 0 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
 /* Set a style for all buttons */
 button {
   color: white;
