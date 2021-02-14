@@ -8,6 +8,9 @@
 </head>
 <div id="login" class="modal">
     <form class="modal-content">
+        <div class="imgcontainer">
+            <img src="assets/img/slotlogin.png" alt="Login" class="avatar">
+        </div>
         <div class="container">
             <label for="username">Username:</label>
             <input type="text" placeholder="Benutzername" name="username" required>
