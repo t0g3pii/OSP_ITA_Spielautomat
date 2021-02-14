@@ -1,36 +1,146 @@
 <html>
 
 <head>
-    <title>Game Testing Website</title>
+    <title>Slot Machine - Game</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.cycle2.js"></script>
+    <script src="assets/js/jquery.cycle2.scrollVert.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js" async></script>
+    <script>
+        var wait = false;
+
+        function update() {
+            $.post("gameserver.php", {
+                "action": "getData"
+            }, (rawdata) => {
+                let data = JSON.parse(rawdata);
+                $("#game_value").val(data["credits"]);
+            });
+        }
+
+        function getFree() {
+            $.post("gameserver.php", {
+                "action": "getFree"
+            }, () => {
+                update();
+            });
+        }
+
+        function logout() {
+            $.post("gameserver.php", {
+                "action": "logout"
+            }, () => {
+                window.open("index.php", "_self")
+            });
+        }
+
+        function stakeAdd(x) {
+            let oldStake = $("#game_stake").val();
+            let newStake = Number(oldStake) + x;
+            $("#game_stake").val(newStake);
+        }
+
+        function stakeRem(x) {
+            let oldStake = $("#game_stake").val();
+            let newStake = oldStake - x;
+            $("#game_stake").val(newStake);
+        }
+
+        function play() {
+            if (wait) {
+                alert("Gedulde dich du Sackratte!");
+                return
+            }
+            // wait = true;
+            // setTimeout(() => {
+            //    wait = false;
+            //}, 3000);
+            let stake = Number($("#game_stake").val());
+            $.post("gameserver.php", {
+                "action": "play",
+                "stake": stake
+            }, (rawData) => {
+                console.log(rawData);
+                update();
+                let data = JSON.parse(rawData); // roleOne, roleTwo, roleThree, WinAmount
+                document.getElementById("game_slot1").value = data[0];
+                document.getElementById("game_slot2").value = data[1];
+                document.getElementById("game_slot3").value = data[2];
+                document.getElementById("game_win").value = data[3];
+                document.getElementById("role1").src = "/assets/img/" + data[0] + ".jpg";
+                document.getElementById("role2").src = "/assets/img/" + data[1] + ".jpg";
+                document.getElementById("role3").src = "/assets/img/" + data[2] + ".jpg";
+            });
+        }
+    </script>
 </head>
 
 <body oncontextmenu="return false">
-    <div class="modal show" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal show" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-modal="true" role="dialog" style="display: block;">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="assets/img/slotlogin.png" style="width: 50px">
-                    <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">Anmelden</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">OSP_Spielautomat</h5>
                 </div>
                 <form>
                     <div class="modal-body">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="text" class="form-control" placeholder="Benutzername" name="username"
-                                minlength="4" maxlength="16" required>
-                            <input type="password" pattern="[0-9]*" inputmode="numeric" class="form-control"
-                                placeholder="4-Stelliger Zahlen PIN" name="pin" minlength="4" maxlength="4" required>
+                        <div class="container">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">@ & Credits</span>
+                                <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
+                                <input class="form-control" id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Einsatz</span>
+                                <input class="form-control" id="game_stake" value="5" type="number" disabled>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Rolle 1,2 & 3</span>
+                                <input class="form-control" id="game_slot1" value=0 disabled>
+                                <input class="form-control" id="game_slot2" value=0 disabled>
+                                <input class="form-control" id="game_slot3" value=0 disabled>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Gewinn</span>
+                                <input class="form-control" id="game_win" value=0 disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="cycle-slideshow"
+                            data-cycle-fx="scrollVert"
+                            data-cycle-timeout="5"
+                            data-cycle-speed="100"
+                            >
+                                <img src="assets/img/0.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/1.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/2.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/3.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/4.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/5.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/6.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/7.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/8.jpg" style="display:none; width: 250px;"/>
+                            </div>
+                            <img id="role2" style="height: 250px" src="assets/img/1.jpg">
+                            <img id="role3" style="height: 250px" src="assets/img/1.jpg">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button style="width:auto;" type="submit" class="btn btn-success" formaction="/login.php">Anmelden</button>
-                        <button style="width:auto;" type="submit" class="btn btn-danger" formaction="/register.php">Registrieren</button>
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-primary" onclick="play();">Spielen</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-warning" onclick="stakeRem(1);">Einsatz -</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Second group">
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-secondary" onclick="getFree();">Free Credits</button>
+                            <button style="width:auto; margin:0px" type="button" class="btn btn-danger" onclick="logout();">Abmelden</button>
+                        </div>
                     </div>
                 </form>
             </div>

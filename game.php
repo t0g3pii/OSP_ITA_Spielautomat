@@ -17,12 +17,13 @@ $data = $st->fetch();
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Slot Machine - Game</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.cycle2.js"></script>
+    <script src="assets/js/jquery.cycle2.scrollVert.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js" async></script>
     <script>
@@ -100,9 +101,6 @@ $data = $st->fetch();
             <div class="modal-content">
                 <div class="modal-header">
                     <img src="assets/img/slotlogin.png" style="width: 50px">
-                    <img id="role1" class="animated_div" style="height: 50px" src="/assets/img/1.jpg">
-                    <img id="role2" style="height: 50px" src="/assets/img/1.jpg">
-                    <img id="role3" style="height: 50px" src="/assets/img/1.jpg">
                     <h5 class="modal-title" id="staticBackdropLabel" style="color: black;">OSP_Spielautomat</h5>
                 </div>
                 <form>
@@ -127,6 +125,27 @@ $data = $st->fetch();
                                 <span class="input-group-text" id="basic-addon1">Gewinn</span>
                                 <input class="form-control" id="game_win" value=0 disabled>
                             </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="cycle-slideshow"
+                            data-cycle-fx="scrollVert"
+                            data-cycle-timeout="5"
+                            data-cycle-speed="100"
+                            >
+                                <img src="assets/img/0.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/1.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/2.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/3.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/4.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/5.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/6.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/7.jpg" style="display:none; width: 250px;"/>
+                                <img src="assets/img/8.jpg" style="display:none; width: 250px;"/>
+                            </div>
+                            <img id="role2" style="height: 250px" src="assets/img/1.jpg">
+                            <img id="role3" style="height: 250px" src="assets/img/1.jpg">
                         </div>
                     </div>
                     <div class="modal-footer">
