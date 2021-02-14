@@ -39,17 +39,30 @@ $data = $st->fetch();
                     window.open("index.php","_self")
                 });
             }
+
+            function stakeAdd(x) {
+                let old = $("#game_stake").val();
+                let new = old + x;
+                $("#game_stake").val( new );
+            }
+
+            function stakeRem(x) {
+                let old = $("#game_stake").val();
+                let new = old - x;
+                $("#game_stake").val( new );
+            }
         </script>
     </head>
     <body>
         <input id="game_username" value="<?php echo $data["username"]; ?>">
         <input id="game_value" value="<?php echo $data["credits"]; ?>">
+        <input id="game_stake" value="5" type="number">;
         <input id="game_slot1">
         <input id="game_slot2">
         <input id="game_slot3">
         <input id="game_win">
-        <button>Einsatz +</button>
-        <button>Einsatz -</button>
+        <button onclick="stakeAdd(1);">Einsatz +</button>
+        <button onclick="stakeRem(1);">Einsatz -</button>
         <button>Spielen</button>
         <button onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
         <button onclick="logout();">Ausloggen</button>
