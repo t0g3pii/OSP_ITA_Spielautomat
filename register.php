@@ -1,4 +1,5 @@
 <?php
+    require("inc/db.inc.php");
     $result = $pdo->query( "INSERT INTO `user` (`username`) VALUES ('".$_GET['username']."');" );
-    print_r( $pdo->lastInsertId );
+    print_r( $result );
 ?>
