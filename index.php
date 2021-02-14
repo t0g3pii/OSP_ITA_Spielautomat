@@ -6,6 +6,7 @@
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = 'game.php';
         header("Location: http://$host$uri/$extra");
+        exit();
     }
 ?>
 <head>
