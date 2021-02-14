@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script>
-            function update() {
-                $.post("gameserver.php",{"action":"getData"} ,(data)=>{
-                    console.log(data);
-                });
-            }
-        </script>
-    </head>
-    <body>
-        <input id="game_username">
-        <input id="game_value">
-        <input id="game_slot1">
-        <input id="game_slot2">
-        <input id="game_slot3">
-        <input id="game_win">
-        <button>Einsatz +</button>
-        <button>Einsatz -</button>
-        <button>Spielen</button>
-        <button>Freebee Kepie</button>
-        <button>Ausloggen</button>
-    </body>
-</html>
-
-
-<!-- echo $_SESSION["UUID"]; -->
-<!-- <?php
+<?php
 session_start();
 if (!isset($_SESSION["UUID"])) {
     $host  = $_SERVER['HTTP_HOST'];
@@ -38,4 +9,62 @@ if (!isset($_SESSION["UUID"])) {
     exit();
 }
 require("inc/db.inc.php");
-?> -->
+
+$st = $pdo->prepare( "SELECT username, credits, lastFree FROM `user` WHERE `UUID` = ?" );
+$st->execute(array($_SESSION["UUID"]));
+$data = $st->fetch();
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>
+            function update() {
+                $.post("gameserver.php",{"action":"getData"} ,(rawdata)=>{
+                    let data = JSON.parse(rawdata);
+                    $("#game_username").val(data["username"]);
+                    $("#game_value").val(data["credits"]);
+                });
+            }
+
+            function getFree() {
+                $.post("gameserver.php",{"action":"getFree"} ,()=>{
+                    update();
+                });
+            }
+
+            function logout() {
+                $.post("gameserver.php",{"action":"logout"} ,()=>{
+                    window.open("index.php","_self")
+                });
+            }
+
+            function stakeAdd(x) {
+                let oldStake = $("#game_stake").val();
+                let newStake = oldStake + x;
+                $("#game_stake").val( newStake );
+            }
+
+            function stakeRem(x) {
+                let old = $("#game_stake").val();
+                let new = old - x;
+                $("#game_stake").val( new );
+            }
+        </script>
+    </head>
+    <body>
+        <input id="game_username" value="<?php echo $data["username"]; ?>">
+        <input id="game_value" value="<?php echo $data["credits"]; ?>">
+        <input id="game_stake" value="5" type="number">;
+        <input id="game_slot1">
+        <input id="game_slot2">
+        <input id="game_slot3">
+        <input id="game_win">
+        <button onclick="stakeAdd(1);">Einsatz +</button>
+        <button onclick="stakeRem(1);">Einsatz -</button>
+        <button>Spielen</button>
+        <button onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
+        <button onclick="logout();">Ausloggen</button>
+    </body>
+</html>
