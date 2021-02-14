@@ -94,7 +94,7 @@ $data = $st->fetch();
     </script>
 </head>
 
-<body>
+<body style="width: 80%">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">@ & Credits</span>
         <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
