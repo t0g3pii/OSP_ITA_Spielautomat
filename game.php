@@ -92,18 +92,24 @@ $data = $st->fetch();
 </head>
 
 <body>
-    <input id="game_username" value="<?php echo $data["username"]; ?>" disabled>
-    <input id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
-    <input id="game_stake" value="5" type="number" disabled>;
-    <input id="game_slot1" disabled>
-    <input id="game_slot2" disabled>
-    <input id="game_slot3" disabled>
-    <input id="game_win" disabled>
-    <button onclick="stakeAdd(1);">Einsatz +</button>
-    <button onclick="stakeRem(1);">Einsatz -</button>
-    <button onclick="play();">Spielen</button>
-    <button onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
-    <button onclick="logout();">Ausloggen</button>
+    <div class="input-group mb-3">
+    <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
+    <input class="form-control"  id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
+    </div>
+    <div class="input-group mb-3">
+    <input class="form-control"  id="game_stake" value="5" type="number" disabled>;
+    </div>
+    <div class="input-group mb-3">
+    <input class="form-control"  id="game_slot1" disabled>
+    <input class="form-control"  id="game_slot2" disabled>
+    <input class="form-control"  id="game_slot3" disabled>
+    <input class="form-control" id="game_win" disabled>
+    </div>
+    <button class="btn btn-success" onclick="stakeAdd(1);">Einsatz +</button>
+    <button class="btn btn-success" onclick="stakeRem(1);">Einsatz -</button>
+    <button class="btn btn-success" onclick="play();">Spielen</button>
+    <button class="btn btn-success" onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
+    <button class="btn btn-success" onclick="logout();">Ausloggen</button>
 </body>
 
 </html>
