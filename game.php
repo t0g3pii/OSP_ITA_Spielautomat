@@ -51,6 +51,13 @@ $data = $st->fetch();
                 let newStake = oldStake - x;
                 $("#game_stake").val( newStake );
             }
+
+            function play() {
+                let stake = $("#game_stake").val();
+                $.post("gameserver.php",{"action":"play", "stake": stake} ,(data)=>{
+                    
+                });
+            }
         </script>
     </head>
     <body>
@@ -63,7 +70,7 @@ $data = $st->fetch();
         <input id="game_win">
         <button onclick="stakeAdd(1);">Einsatz +</button>
         <button onclick="stakeRem(1);">Einsatz -</button>
-        <button>Spielen</button>
+        <button onclick="play();">Spielen</button>
         <button onclick="getFree();" <?php echo "disabled"; ?>>Freebee Kepie</button>
         <button onclick="logout();">Ausloggen</button>
     </body>
