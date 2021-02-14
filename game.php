@@ -93,13 +93,16 @@ $data = $st->fetch();
 
 <body>
     <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@ & Credits</span>
     <input class="form-control" id="game_username" value="<?php echo $data["username"]; ?>" disabled>
     <input class="form-control"  id="game_value" value="<?php echo $data["credits"]; ?>" disabled>
     </div>
     <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Einsatz</span>
     <input class="form-control"  id="game_stake" value="5" type="number" disabled>;
     </div>
     <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Rolle 1,2,3 & Win</span>
     <input class="form-control"  id="game_slot1" disabled>
     <input class="form-control"  id="game_slot2" disabled>
     <input class="form-control"  id="game_slot3" disabled>
